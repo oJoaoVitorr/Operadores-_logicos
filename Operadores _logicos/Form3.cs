@@ -28,12 +28,20 @@ namespace Operadores__logicos
             {
                 string curso;
 
-                curso = textBox1.Text.ToUpper();
-
-                if(curso == "DS" || curso == "ADM")
+                if (string.IsNullOrWhiteSpace(textBox1.Text))
                 {
-                    textBox3.AppendText("Curso escolhido!\n" + curso + "Curso válido");
+                    MessageBox.Show("Por favor, insira o nome do curso.");
+                    return;
                 }
+                else
+                {
+                    curso = textBox1.Text.ToUpper();
+                }
+                    if (curso == "DS" || curso == "ADM")
+                    {
+                        textBox3.AppendText("Curso escolhido!\n " + curso + " Curso válido");
+                    }
+                
             }
             catch (Exception)
             {
