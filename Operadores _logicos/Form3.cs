@@ -39,8 +39,12 @@ namespace Operadores__logicos
                 }
                     if (curso == "DS" || curso == "ADM")
                     {
-                        textBox3.AppendText("Curso escolhido!\n " + curso + " Curso válido");
-                    }
+                        textBox3.AppendText("Curso escolhido! "+Environment.NewLine + curso + " Curso válido"+ Environment.NewLine);
+                }
+                else
+                {
+                    textBox3.AppendText("Curso escolhido! "+    Environment.NewLine + curso + " Curso inválido"+Environment.NewLine);
+                }
                 
             }
             catch (Exception)

@@ -19,19 +19,26 @@ namespace Operadores__logicos
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int idade;
-            double altura;
-
-            idade= Int32.Parse(textBox1.Text);
-            altura = Convert.ToDouble(textBox2.Text);
-
-            if((idade >=15) &&  (idade <=25) &&  (altura >= 1.60))
+            try
             {
-                textBox3.AppendText("Sim" + Environment.NewLine + "Pode entrar para a equipe de natação!");
+                int idade;
+                double altura;
+
+                idade = Int32.Parse(textBox1.Text);
+                altura = Convert.ToDouble(textBox2.Text);
+
+                if ((idade >= 15) && (idade <= 25) && (altura >= 1.60))
+                {
+                    textBox3.AppendText("Sim" + Environment.NewLine + "Pode entrar para a equipe de natação!");
+                }
+                else
+                {
+                    textBox3.AppendText("Não pode entrar para a equipe de natação!");
+                }
             }
-            else
+            catch (Exception)
             {
-                textBox3.AppendText("Não pode entrar para a equipe de natação!");
+                MessageBox.Show("Por favor, tente novamente.");
             }
         }
 
